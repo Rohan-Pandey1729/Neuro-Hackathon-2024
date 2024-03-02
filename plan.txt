@@ -1,0 +1,12 @@
+simplest plan:
+
+get data: genre -> clips
+
+for each genre:
+    have user wear the cap while doing some task requiring concentration
+    play random clip from genre
+    measure what proportion of time user is concentrated over some of time
+    repeat for more clips from genre if desired
+
+determine genre with max (avg) concentration proportion
+choose random clips from genre for recommendation
