@@ -10,6 +10,7 @@ python = "^3.11"
 brainflow = "^5.12.1"
 setuptools = "^69.1.1"
 matplotlib = "^3.8.3"
+ipykernel = "^6.29.3"
 
 
 [tool.poetry.group.dev.dependencies]
