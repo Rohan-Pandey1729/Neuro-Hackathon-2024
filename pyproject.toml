@@ -13,6 +13,7 @@ matplotlib = "^3.8.3"
 ipykernel = "^6.29.3"
 sounddevice = "^0.4.6"
 soundfile = "^0.12.1"
+python-dotenv = "^1.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
