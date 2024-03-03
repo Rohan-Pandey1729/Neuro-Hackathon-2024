@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music Test</title>
+  </head>
+  <body>
+    <h1>Music Test</h1>
+    <h2>Please listen to the music</h2>
+    <audio controls id="player">
+      <source src="{{music_file}}" type="audio/wav" />
+      Your browser does not support the audio element.
+    </audio>
+    <script>
+      var player = document.getElementById("player");
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const scores = urlParams.get('scores');
+      player.addEventListener("play", async function () {
+        try {
+            const request = await fetch("/get_concentration_score", {
+                method: "POST",
+            });
+            const response = await response.text();
+            let page_to_go = "/test";
+            if (scores == null) {
+                page_to_go += "?scores=" + response;
+            } else {
+                page_to_go += "?scores=" + scores + "," + response;
+            }
+            window.location.href = page_to_go;
+        } catch (error) {
+            console.error("Error:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
