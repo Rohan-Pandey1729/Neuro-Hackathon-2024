@@ -1,4 +1,14 @@
 from flask import Flask
+import matplotlib.pyplot as plt
+import numpy as np
+from dotenv import load_dotenv
+import random
+import soundfile as sf
+import sounddevice as sd
+
+from brainflow.board_shim import BoardShim, BrainFlowInputParams, BoardIds, BrainFlowPresets
+from brainflow import ml_model
+from brainflow.ml_model import *
 
 app = Flask(__name__)
 
