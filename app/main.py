@@ -56,7 +56,7 @@ def test_results():
     scores = request.args.get("scores", "").split(",")
     my_genres = request.args.get("genres", "").split(",") + ["No Music"]
     scores_as_float = [float(score) for score in scores]
-    return genres[scores_as_float.index(max(scores_as_float))]
+    return my_genres[scores_as_float.index(max(scores_as_float))]
 
 @app.route("/music/<path:filename>")
 def music(filename):
