@@ -44,7 +44,7 @@ def results():
 def measure_music_concentration():
     scores = request.args.get("scores", "").split(",")
     my_genres = request.args.get("genres", "").split(",")
-    if len(scores) == 10:
+    if len(scores) == 3:
         return str(max(map(float, scores)))
     genre = my_genres[len(scores)]
     music_file = f"{genre}.0000{random.randint(0, 9)}.wav"
