@@ -21,7 +21,7 @@
             const request = await fetch("/get_concentration_score", {
                 method: "POST",
             });
-            const response = await response.text();
+            const response = await request.text();
             let page_to_go = "/test";
             if (scores == null) {
                 page_to_go += "?scores=" + response;
