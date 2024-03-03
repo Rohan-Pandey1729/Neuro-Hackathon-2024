@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recommendation</title>
+    <link rel="icon" type="image/svg" href="{{ url_for('static', filename='brain.svg') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='styles.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="big-container">
+      <div class="box py-5 mt-5 space-y-6">
+        <h1>Your top genre is:</h1>
+        <div class="option p-2 rounded-md text-2xl w-min">{{ answer }}</div>
+        {% if answer == "No Music" %}
+          <div class="">We believe you concentrate best when you don't listen to music!</div>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

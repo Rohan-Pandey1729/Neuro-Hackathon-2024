@@ -23,7 +23,7 @@ def get_prob(
 
     `sample_time` is how long to sleep for while collecting data
     """
-    time.sleep(5)
+    time.sleep(3)
     return np.random.random()
     # load_dotenv()
 

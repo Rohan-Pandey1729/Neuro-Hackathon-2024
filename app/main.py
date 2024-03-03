@@ -60,7 +60,7 @@ def test_results():
     my_genres = request.args.get("genres", "").split(",") + ["No Music"]
     scores_as_float = [float(score) for score in scores]
     # TODO: render template with concrete song recommendations
-    return my_genres[scores_as_float.index(max(scores_as_float))]
+    return render_template("music_results.html", answer=my_genres[scores_as_float.index(max(scores_as_float))])
 
 @app.route("/music/<path:filename>")
 def music(filename):
