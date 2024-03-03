@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Music Result</title>
-</head>
-<body>
-    <h1>Your Top 3 Music Genres are:</h1>
-    <ol>
-        <li>{{ genres[0] }}</li>
-        <li>{{ genres[1] }}</li>
-        <li>{{ genres[2] }}</li>
-    </ol>
-    <button onclick="window.location.href='/test?genres={{genres[0]}},{{genres[1]}},{{genres[2]}}'">Take Test</button>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='styles.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="big-container">
+      <div class="box py-5 mt-5 space-y-6">
+        <h1>Your Top 3 Music Genres are:</h1>
+        <div class="w-full flex flex-row items-center space-x-5">
+          <div class="option flex-1 p-2 rounded-md text-center">
+            {{ genres[0] }}
+          </div>
+          <div class="option flex-1 p-2 rounded-md text-center">
+            {{ genres[1] }}
+          </div>
+          <div class="option flex-1 p-2 rounded-md text-center">
+            {{ genres[2] }}
+          </div>
+        </div>
+        <div>Let's see which genre helps you concentrate the most!</div>
+        <div class="w-full flex flex-col items-center pb-3">
+          <button
+            class="next-button p-2 rounded-md text-lg"
+            onclick="window.location.href='/test?genres={{genres[0]}},{{genres[1]}},{{genres[2]}}'"
+          >
+            Begin
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
