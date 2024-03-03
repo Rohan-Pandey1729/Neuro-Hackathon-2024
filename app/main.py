@@ -19,7 +19,6 @@ genres = [
     "jazz", "metal", "pop", "reggae", "rock"
 ]
 
-
 @app.route("/")
 def questions():
     return render_template("survey.html")

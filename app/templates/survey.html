@@ -1,32 +1,179 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Survey App</title>
+    <title>Music Taste Survey</title>
+    <link rel="icon" type="image/svg" href="{{ url_for('static', filename='brain.svg') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='styles.css') }}"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Please fill out the following question</h1>
-    <form method="post" action="/results">
-      <label for="pace">Do you prefer fast-paced music or slow-paced music?</label><br>
-      <input type="radio" name="pace" value="fast" id="pace-fast" required>
-      <label for="pace-fast">Fast</label>
-      <input type="radio" name="pace" value="slow" id="pace-slow" required>
-      <label for="pace-slow">Slow</label><br>
-      <label for="instrumental">Do you prefer instrumental music or songs with lyrics?</label><br>
-      <input type="radio" name="instrumental" value="instrumental" id="instrumental-instrumental" required>
-      <label for="instrumental-instrumental">Instrumental</label>
-      <input type="radio" name="instrumental" value="lyrics" id="instrumental-lyrics" required>
-      <label for="instrumental-lyrics">Lyrics</label><br>
-      <label for="beat">Do you prefer music with heavy beats or more melodic tunes?</label><br>
-      <input type="radio" name="beat" value="heavy" id="beat-heavy" required>
-      <label for="beat-heavy">Heavy</label>
-      <input type="radio" name="beat" value="melodic" id="beat-melodic" required>
-      <label for="beat-melodic">Melodic</label><br>
-      <label for="energy">Would you rather listen to music that energizes you or music that helps you relax?</label><br>
-      <input type="radio" name="energy" value="energize" id="energy-energize" required>
-      <label for="energy-energize">Energize</label>
-      <input type="radio" name="energy" value="relax" id="energy-relax" required>
-      <label for="energy-relax">Relax</label><br>
-      <input type="submit" value="Submit">
-    </form>
+    <div class="big-container">
+      <div class="box mt-5 space-y-6">
+        <h1>Please answer the following questions:</h1>
+        <form method="post" action="/results" class="space-y-3">
+          <div class="question space-y-1">
+            <label for="pace" class="text-lg"
+              >Do you prefer fast-paced music or slow-paced music?</label
+            >
+            <div class="w-full flex flex-row items-center space-x-5">
+              <div class="flex-1">
+                <input
+                  type="radio"
+                  name="pace"
+                  value="fast"
+                  id="pace-fast"
+                  required
+                />
+                <label
+                  for="pace-fast"
+                  class="option flex-1 flex flex-col items-center p-2 rounded-md"
+                  >Fast</label
+                >
+              </div>
+              <div class="flex-1">
+                <input
+                  type="radio"
+                  name="pace"
+                  value="slow"
+                  id="pace-slow"
+                  required
+                />
+                <label
+                  for="pace-slow"
+                  class="option flex-1 flex flex-col items-center p-2 rounded-md"
+                  >Slow</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="question space-y-1">
+            <label for="instrumental" class="text-lg"
+              >Do you prefer instrumental music or songs with lyrics?</label
+            >
+            <div class="w-full flex flex-row items-center space-x-5">
+              <div class="flex-1">
+                <input
+                  type="radio"
+                  name="instrumental"
+                  value="instrumental"
+                  id="instrumental-instrumental"
+                  required
+                />
+                <label
+                  for="instrumental-instrumental"
+                  class="option flex-1 flex flex-col items-center p-2 rounded-md"
+                  >Instrumental</label
+                >
+              </div>
+              <div class="flex-1">
+                <input
+                  type="radio"
+                  name="instrumental"
+                  value="lyrics"
+                  id="instrumental-lyrics"
+                  required
+                />
+                <label
+                  for="instrumental-lyrics"
+                  class="option flex-1 flex flex-col items-center p-2 rounded-md"
+                  >Lyrics</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="question space-y-1">
+            <label for="beat" class="text-lg"
+              >Do you prefer music with heavy beats or more melodic
+              tunes?</label
+            >
+            <div class="w-full flex flex-row items-center space-x-5">
+              <div class="flex-1">
+                <input
+                  type="radio"
+                  name="beat"
+                  value="heavy"
+                  id="beat-heavy"
+                  required
+                />
+                <label
+                  for="beat-heavy"
+                  class="option flex-1 flex flex-col items-center p-2 rounded-md"
+                  >Heavy</label
+                >
+              </div>
+              <div class="flex-1">
+                <input
+                  type="radio"
+                  name="beat"
+                  value="melodic"
+                  id="beat-melodic"
+                  required
+                />
+                <label
+                  for="beat-melodic"
+                  class="option flex-1 flex flex-col items-center p-2 rounded-md"
+                  >Melodic</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="question space-y-1">
+            <label for="energy" class="text-lg"
+              >Would you rather listen to music that energizes you or music that
+              helps you relax?</label
+            >
+            <div class="w-full flex flex-row items-center space-x-5">
+              <div class="flex-1">
+                <input
+                  type="radio"
+                  name="energy"
+                  value="energize"
+                  id="energy-energize"
+                  required
+                />
+                <label
+                  for="energy-energize"
+                  class="option flex-1 flex flex-col items-center p-2 rounded-md"
+                  >Energize</label
+                >
+              </div>
+              <div class="flex-1">
+                <input
+                  type="radio"
+                  name="energy"
+                  value="relax"
+                  id="energy-relax"
+                  required
+                />
+                <label
+                  for="energy-relax"
+                  class="option flex-1 flex flex-col items-center p-2 rounded-md"
+                  >Relax</label
+                >
+              </div>
+            </div>
+          </div>
+          <div class="w-full flex flex-col items-center pt-5 pb-3">
+            <input
+              type="submit"
+              value="Submit"
+              class="next-button p-2 rounded-md text-lg"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
