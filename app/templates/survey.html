@@ -2,31 +2,71 @@
 <html>
   <head>
     <title>Survey App</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   </head>
-  <body>
-    <h1>Please fill out the following question</h1>
-    <form method="post" action="/results">
-      <label for="pace">Do you prefer fast-paced music or slow-paced music?</label><br>
-      <input type="radio" name="pace" value="fast" id="pace-fast" required>
+  <body class="m-5">
+    <h1 class="text-lg">Please fill out the following question:</h1>
+    <form method="post" action="/results" class="mt-2">
+      <label for="pace"
+        >Do you prefer fast-paced music or slow-paced music?</label
+      ><br />
+      <input type="radio" name="pace" value="fast" id="pace-fast" required />
       <label for="pace-fast">Fast</label>
-      <input type="radio" name="pace" value="slow" id="pace-slow" required>
-      <label for="pace-slow">Slow</label><br>
-      <label for="instrumental">Do you prefer instrumental music or songs with lyrics?</label><br>
-      <input type="radio" name="instrumental" value="instrumental" id="instrumental-instrumental" required>
+      <input type="radio" name="pace" value="slow" id="pace-slow" required />
+      <label for="pace-slow">Slow</label><br />
+      <label for="instrumental"
+        >Do you prefer instrumental music or songs with lyrics?</label
+      ><br />
+      <input
+        type="radio"
+        name="instrumental"
+        value="instrumental"
+        id="instrumental-instrumental"
+        required
+      />
       <label for="instrumental-instrumental">Instrumental</label>
-      <input type="radio" name="instrumental" value="lyrics" id="instrumental-lyrics" required>
-      <label for="instrumental-lyrics">Lyrics</label><br>
-      <label for="beat">Do you prefer music with heavy beats or more melodic tunes?</label><br>
-      <input type="radio" name="beat" value="heavy" id="beat-heavy" required>
+      <input
+        type="radio"
+        name="instrumental"
+        value="lyrics"
+        id="instrumental-lyrics"
+        required
+      />
+      <label for="instrumental-lyrics">Lyrics</label><br />
+      <label for="beat"
+        >Do you prefer music with heavy beats or more melodic tunes?</label
+      ><br />
+      <input type="radio" name="beat" value="heavy" id="beat-heavy" required />
       <label for="beat-heavy">Heavy</label>
-      <input type="radio" name="beat" value="melodic" id="beat-melodic" required>
-      <label for="beat-melodic">Melodic</label><br>
-      <label for="energy">Would you rather listen to music that energizes you or music that helps you relax?</label><br>
-      <input type="radio" name="energy" value="energize" id="energy-energize" required>
+      <input
+        type="radio"
+        name="beat"
+        value="melodic"
+        id="beat-melodic"
+        required
+      />
+      <label for="beat-melodic">Melodic</label><br />
+      <label for="energy"
+        >Would you rather listen to music that energizes you or music that helps
+        you relax?</label
+      ><br />
+      <input
+        type="radio"
+        name="energy"
+        value="energize"
+        id="energy-energize"
+        required
+      />
       <label for="energy-energize">Energize</label>
-      <input type="radio" name="energy" value="relax" id="energy-relax" required>
-      <label for="energy-relax">Relax</label><br>
-      <input type="submit" value="Submit">
+      <input
+        type="radio"
+        name="energy"
+        value="relax"
+        id="energy-relax"
+        required
+      />
+      <label for="energy-relax">Relax</label><br />
+      <input type="submit" value="Submit" />
     </form>
   </body>
 </html>
