@@ -24,16 +24,26 @@
         <h1>Concentration Test</h1>
         <div>
           Choose an activity requiring you to concentrate, or type the words
-          displayed below. When you are ready, press play below and begin your
+          displayed below. When you are ready, press
+          {% if play_music %}
+            play
+          {% else %}
+            Start Test
+          {% endif %}
+          below and begin your
           activity.
         </div>
         <div>
           We may redirect you to the next test before the audio clip finishes playing.
         </div>
+        {% if play_music %}
         <audio controls id="player">
           <source src="{{music_file}}" type="audio/wav" />
           Your browser does not support the audio element.
         </audio>
+        {% else %}
+        <button id="button" class="mybutton option flex-1 p-2 rounded-md text-center">Start Test</button>
+        {% endif %}
         <div class="w-full option p-2 rounded-md" id="text"></div>
         <textarea name="typing" id="typing" class="w-full rounded-md"></textarea>
 
@@ -251,12 +261,21 @@
           document.getElementById("text").innerHTML = text;
         </script>
         <script>
+          {% if play_music %}
           var player = document.getElementById("player");
+          {% else %}
+          var player = document.getElementById("button");
+          {% endif %}
           const queryString = window.location.search;
           const urlParams = new URLSearchParams(queryString);
           const scores = urlParams.get("scores");
           const genres = urlParams.get("genres");
+          {% if play_music %}
           player.addEventListener("play", async function () {
+          {% else %}
+          player.addEventListener("click", async function () {
+            player.disabled = true;
+          {% endif %}
             try {
               const request = await fetch("/get_concentration_score", {
                 method: "POST",

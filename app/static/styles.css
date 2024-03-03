@@ -58,3 +58,9 @@ input[type="radio"]:checked + label {
 input:hover {
     background-color: hsl(147, 45%, 59%);
 }
+
+.mybutton:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}

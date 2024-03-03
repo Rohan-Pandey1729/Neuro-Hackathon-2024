@@ -44,12 +44,12 @@ def measure_music_concentration():
     scores = request.args.get("scores", "").split(",")
     my_genres = request.args.get("genres", "").split(",")
     if len(scores) == 3:
-        return render_template("no_music_test.html")
+        return render_template("music_test.html", play_music=False)
     elif len(scores) > 3:
         return test_results()
     genre = my_genres[len(scores)]
     music_file = f"{genre}.0000{random.randint(0, 9)}.wav"
-    return render_template("music_test.html", music_file="/music/" + genre + "/" + music_file)
+    return render_template("music_test.html", music_file="/music/" + genre + "/" + music_file, play_music=True)
 
 def test_results():
     scores = request.args.get("scores", "").split(",")
