@@ -41,7 +41,11 @@ def results():
 
 @app.route("/test")
 def measure_music_concentration():
-    scores = request.args.get("scores", "").split(",")
+    scores = request.args.get("scores")
+    if scores is None:
+        scores = []
+    else:
+        scores = scores.split(",")
     my_genres = request.args.get("genres", "").split(",")
     if len(scores) == 3:
         return render_template("music_test.html", play_music=False)
