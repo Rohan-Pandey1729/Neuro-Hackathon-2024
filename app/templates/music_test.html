@@ -15,6 +15,7 @@
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
       const scores = urlParams.get('scores');
+      const genres = urlParams.get('genres');
       player.addEventListener("play", async function () {
         try {
             const request = await fetch("/get_concentration_score", {
@@ -27,6 +28,7 @@
             } else {
                 page_to_go += "?scores=" + scores + "," + response;
             }
+            page_to_go += "&genres=" + genres;
             window.location.href = page_to_go;
         } catch (error) {
             console.error("Error:", error);
