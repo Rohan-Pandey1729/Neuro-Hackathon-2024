@@ -45,11 +45,18 @@ def measure_music_concentration():
     scores = request.args.get("scores", "").split(",")
     my_genres = request.args.get("genres", "").split(",")
     if len(scores) == 3:
-        scores_as_float = [float(score) for score in scores]
-        return genres[scores_as_float.index(max(scores_as_float))]
+        return render_template("no_music_test.html")
+    elif len(scores) > 3:
+        return test_results()
     genre = my_genres[len(scores)]
     music_file = f"{genre}.0000{random.randint(0, 9)}.wav"
     return render_template("music_test.html", music_file="/music/" + genre + "/" + music_file)
+
+def test_results():
+    scores = request.args.get("scores", "").split(",")
+    my_genres = request.args.get("genres", "").split(",") + ["No Music"]
+    scores_as_float = [float(score) for score in scores]
+    return genres[scores_as_float.index(max(scores_as_float))]
 
 @app.route("/music/<path:filename>")
 def music(filename):

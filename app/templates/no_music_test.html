@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music Test</title>
+  </head>
+  <body>
+    <h1>Music Test</h1>
+    <h2>Please Press The Button</h2>
+    <button id="button">Start Test</button>
+    <script>
+      var player = document.getElementById("button");
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const scores = urlParams.get('scores');
+      const genres = urlParams.get('genres');
+      player.addEventListener("click", async function () {
+        try {
+            const request = await fetch("/get_concentration_score", {
+                method: "POST",
+            });
+            const response = await request.text();
+            let page_to_go = "/test";
+            if (scores == null) {
+                page_to_go += "?scores=" + response;
+            } else {
+                page_to_go += "?scores=" + scores + "," + response;
+            }
+            page_to_go += "&genres=" + genres;
+            window.location.href = page_to_go;
+        } catch (error) {
+            console.error("Error:", error);
+        }
+      });
+    </script>
+  </body>
+</html>
