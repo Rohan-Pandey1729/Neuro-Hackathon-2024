@@ -36,8 +36,9 @@ to tun the web app, follow the following steps:
 1. Follow instructions in the Cap Kit to ensure all brain activity will be recorded accurately
 2. Wear Cap and connect the Bluetooth device to computer
 3. Clone this repository to your local machine
-3. In Terminal, navigate to the app directory in this repository
-4. Run the following command in your terminal:
+4. Edit the serial port in [`.env`](.env) to the port that the Open BCI Cap Kit is connected to. On linux, you can find the port by running `ls /dev/tty*` in your terminal and looking for the port that is connected to the Open BCI Cap Kit. On Mac, you can find the port by running `ls /dev/cu.*` in your terminal and looking for the port that is connected to the Open BCI Cap Kit. On Windows, you can find the port by running `mode` in your terminal and looking for the port that is connected to the Open BCI Cap Kit.
+5. In Terminal, navigate to the app directory in this repository
+6. Run the following command in your terminal:
 ```bash
 python3 main.py
 ```
