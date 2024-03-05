@@ -59,11 +59,11 @@ Unplug all wiring, and restart or wait for board to cool down.
 Contributor names and contact info:
 
 * Rohan Pandey  
-* [@RohanPandey](rpande@uw.edu)
+* [@RohanPandey]<rpande@uw.edu>
 * Ray Chen
-* [@RayChen](raychen8@uw.edu)
+* [@RayChen]<raychen8@uw.edu>
 * Eric Ye
-* [@EricYe](ericy4@uw.edu)
+* [@EricYe]<ericy4@uw.edu>
 * Siddh
 * [@Siddh](4259008490)
 
