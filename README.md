@@ -66,7 +66,7 @@ Contributor names and contact info:
 * Rohan Pandey [@RohanPandey](mailto:rpande@uw.edu)
 * Ray Chen [@RayChen](mailto:raychen8@uw.edu)
 * Eric Ye [@EricYe](mailto:ericy4@uw.edu)
-* Siddh [@Siddh](tel:4259008490)
+* Siddh [@Siddh](mailto:siddhbhanushali@gmail.com)
 
 ## Version History
 
